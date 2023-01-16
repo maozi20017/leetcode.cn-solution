@@ -10,5 +10,5 @@ func findClosestNumber(nums []int) int {
             min_range=nums[i]                                   
         }
     }
-    return min_range
+    return min_rang
 }
