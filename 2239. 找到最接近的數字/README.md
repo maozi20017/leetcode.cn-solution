@@ -1,7 +1,6 @@
 [題目敘述](https://leetcode.cn/problems/find-closest-number-to-zero/)
 
-
-'''golang
+```go
 func findClosestNumber(nums []int) int {
     var min_range =nums[0]                                      //初始化為第一個數字
     for i:=1; i<len(nums) ;i++{                                 //遍歷
