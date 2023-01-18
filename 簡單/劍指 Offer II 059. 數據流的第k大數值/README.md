@@ -30,7 +30,7 @@ func (kl *KthLargest) Add(val int) int {
     if kl.Len() > kl.k {        //如超出長度
         heap.Pop(kl)
     }
-    return kl.IntSlice[0]   
+    return kl.IntSlice[0]       //回到一開始
 }
 
 /**
