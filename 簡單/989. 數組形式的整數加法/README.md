@@ -15,7 +15,7 @@ func addToArrayForm(num []int, k int) (ans []int) {
         ans = append(ans, k%10)
     }
     reverse(ans)    //倒轉
-    return
+    return ans
 }
 
 func reverse(num []int) {
