@@ -1,5 +1,5 @@
 [題目敘述](https://leetcode.cn/problems/missing-number/)  
-兩種寫法:  
+兩種寫法(第一種比較快)  
 ```go
 func missingNumber(nums []int) int {
     //用全部總和-nums總和判斷
