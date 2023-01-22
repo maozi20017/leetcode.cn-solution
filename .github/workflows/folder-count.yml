@@ -24,5 +24,3 @@ jobs:
         git add README.md
         git commit -m "Update folder count" || echo "No changes to commit"
         git push
-env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
