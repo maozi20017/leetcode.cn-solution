@@ -1,0 +1,26 @@
+name: Folder Count
+on:
+  push:
+    branches:
+      - main
+jobs:
+  folder-count:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Count folders
+      run: |
+        folder_count=$(find . -maxdepth 1 -type d | wc -l)
+        echo "::set-output name=folder_count::$folder_count"
+    - name: Update README
+      run: |
+        folder_count=$(cat $GITHUB_ENV | jq '.folder_count')
+        sed -i "s/FOLDER_COUNT/$folder_count/g" README.md
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "GitHub Actions"
+        git add README.md
+        git commit -m "Update folder count" || echo "No changes to commit"
+        git push
