@@ -25,4 +25,4 @@ jobs:
         git commit -m "Update folder count" || echo "No changes to commit"
         git push
 env:
-  MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+  MY_GITHUB_TOKEN: ${{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}}
