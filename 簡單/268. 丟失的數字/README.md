@@ -11,9 +11,9 @@ func missingNumber(nums []int) int {
     }
     return expected-actual
 }
-
+```
 或是
-
+```go
 func missingNumber(nums []int) int {
     //建表
     t:=make([]int,len(nums)+1)
