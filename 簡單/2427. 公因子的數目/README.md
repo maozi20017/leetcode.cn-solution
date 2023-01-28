@@ -14,7 +14,7 @@ func commonFactors(a int, b int) int {
 		}
 	}
 	return ans
-    /* 簡單版本直接枚舉
+    /* 簡單版本直接枚舉 效率較差
     ans:=0
     for i:=1;i<=int(math.Min(float64(a),float64(b)));i++{
         if a%i==0&&b%i==0{
