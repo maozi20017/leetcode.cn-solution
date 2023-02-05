@@ -10,7 +10,7 @@
  */
 func hasCycle(head *ListNode) bool {
     fast,slow:=head,head        //快慢指針
-    for (fast!=nil&&fast.Next!=nil){
+    for fast!=nil&&fast.Next!=nil{
         fast=fast.Next.Next
         slow=slow.Next
         if fast==slow{      
