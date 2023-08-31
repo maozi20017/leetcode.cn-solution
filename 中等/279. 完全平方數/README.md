@@ -1,4 +1,5 @@
 [題目敘述](https://leetcode.cn/problems/perfect-squares/description/)   
+似乎能用四平方和定理解
 ```go
 //動態規劃
 func numSquares(n int) int {
