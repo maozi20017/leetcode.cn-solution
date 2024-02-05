@@ -1,5 +1,4 @@
 [題目敘述](https://leetcode.cn/problems/binary-tree-postorder-traversal/description/)   
-拿前序改的原本註解沒變
 ```go
 /**
  * Definition for a binary tree node.
@@ -29,10 +28,11 @@ func postorderTraversal(root *TreeNode) []int {
         //把節點從堆疊移出
         stack=stack[:len(stack)-1]
 
-        ans=append(ans,node.Val)
+        //將節點值插入到數組的最前面
+        ans=append([]int{node.Val},ans...)
 
-        //堆疊為後進先出 所以要先放右節點再放左節點 這樣下次會先拿左節點   
-        //記得要把左跟右相反 因為之後要倒轉
+        //堆疊為後進先出 所以要先放左節點再放右節點 這樣下次會先拿右節點
+        //因為現在插入數組的方式是從最前面
         if node.Left!=nil{
             stack=append(stack,node.Left)
         }
@@ -41,10 +41,5 @@ func postorderTraversal(root *TreeNode) []int {
         }
     }
 
-    //把前序遍歷倒轉就是後序遍歷
-    result := make([]int,0)
-        for i := len(ans) - 1; i >= 0; i-- {
-        result = append(result, ans[i])
-    }
-    return result
+    return ans
 }
